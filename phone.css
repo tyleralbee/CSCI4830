@@ -1,2 +1,35 @@
-/* make all buttons 20 by 20 pixels with white text and green background and a 10 pixel margin */
-./tablinks { width: 100px; height: 20px; background: green; color: white; margin: 10px; }
+/* Style the tab */
+.tabBar {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tabBar button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tabBar button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tabBar button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
