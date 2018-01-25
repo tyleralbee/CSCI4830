@@ -1,2 +1,2 @@
 /* make all buttons 20 by 20 pixels with white text and green background and a 10 pixel margin */
-button { width: 20px; height: 20px; background: green; color: white; margin: 10px; }
+button { width: 100px; height: 20px; background: green; color: white; margin: 10px; }
