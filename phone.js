@@ -20,46 +20,55 @@ function openTab(evt, title) {
     evt.currentTarget.className += " active";
 
 }
+	$('button').click(function(){
+		// set className to the button's class
+		var elementClass = $(this).attr('class');
+		// set elementId to the button's id
+		var elementId = $(this).attr('id');
+    
+    if (elementClass == "number") {
+      document.getElementById('dialInput').value += elementId;
+    }
+    
+    else if (elementClass == "clearButton"){
+      document.getElementById('dialInput').value = "";
+    }
+    
+  });
 
-$('button').click(function(){
-	var elementClass = $(this).attr('class');
-	var elementId = $(this).attr('id');
-	if (elementClass == "number") {
-		document.getElementById('dialInput').value += elementId;
-	} else if (elementClass == "clearButton"){
-		document.getElementById('dialInput').value = "";
-	}
-});
+	var downX, downY, upX, upY;
 
 
-var downX, downY, upX, upY;
 
-$('#gestureAreaID').mousedown(function(event){
-	downX = event.pageX;
-	downY = event.pageY;
-	document.getElementById('gestureOutputID').value = "mouse down";
-});
+	$('#gestureAreaID').mousedown(function(event){
 
-$('#gestureAreaID').mouseup(function(event){
-	upX = event.pageX;
-	upY = event.pageY;
+		downX = event.pageX;
+		downY = event.pageY;
 
-	var updown = Math.abs(upY - downY);
-	var leftright = Math.abs(upX - downX);
-	
-	if(upX == downX && upY == downY){ 
-		document.getElementById('gestureOutputID').value = "mouse up";
-	} else if (updown > leftright){ 
-		if (upY > downY){ 
-			document.getElementById('gestureOutputID').value = "swipe down";
-		} else if (upY < downY){ 
-			document.getElementById('gestureOutputID').value = "swipe up";
-		}
-	} else if (updown < leftright) { 
-		if(upX < downX){
-			document.getElementById('gestureOutputID').value = "swipe left";
-		} else if(upX > downX) { 
-			document.getElementById('gestureOutputID').value = "swipe right";
-		}
-	} 
-});
+		document.getElementById('gestureOutputID').value = "mouse down";
+	});
+
+	$('#gestureAreaID').mouseup(function(event){
+
+		upX = event.pageX;
+		upY = event.pageY;
+
+		var updown = Math.abs(upY - downY);
+		var leftright = Math.abs(upX - downX);
+
+		if(upX == downX && upY == downY){ 
+			document.getElementById('gestureOutputID').value = "mouse up";
+		} else if (updown > leftright){ 
+			if (upY > downY){ 
+				document.getElementById('gestureOutputID').value = "swipe down";
+			} else if (upY < downY){ 
+				document.getElementById('gestureOutputID').value = "swipe up";
+			}
+		} else if (updown < leftright) { 
+			if(upX < downX){
+document.getElementById('gestureOutputID').value = "swipe left";
+			} else if(upX > downX) { 
+				document.getElementById('gestureOutputID').value = "swipe right";
+			}
+		} 
+  });
