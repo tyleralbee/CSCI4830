@@ -1,11 +1,9 @@
-/* Style the tab */
 .tabBar {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
 
-/* Style the buttons that are used to open the tab content */
 .tabBar button {
     background-color: inherit;
     float: left;
@@ -16,17 +14,14 @@
     transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
 .tabBar button:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
 .tabBar button.active {
     background-color: #ccc;
 }
 
-/* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -57,4 +52,17 @@
 .contactAdd{
   padding: 12px 54px;
   
+
+}
+
+.gestureArea{
+  background-color: #808080;
+
+  padding: 300px 300px;
+}
+
+.gestureOutput{
+  background-color: #808080;
+
+  padding 10px 80px;
 }
