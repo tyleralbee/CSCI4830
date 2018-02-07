@@ -22,15 +22,44 @@ function openTab(evt, title) {
 }
 
 $('button').click(function(){
-		var elementClass = $(this).attr('class');
-		var elementId = $(this).attr('id');
-    
-    if (elementClass == "number") {
-      document.getElementById('dialInput').value += elementId;
-    }
-    
-    else if (elementClass == "clearButton"){
-      document.getElementById('dialInput').value = "";
-    }
-    
-  });
+	var elementClass = $(this).attr('class');
+	var elementId = $(this).attr('id');
+	if (elementClass == "number") {
+		document.getElementById('dialInput').value += elementId;
+	} else if (elementClass == "clearButton"){
+		document.getElementById('dialInput').value = "";
+	}
+});
+
+
+var downX, downY, upX, upY;
+
+$('#gestureAreaID').mousedown(function(event){
+	downX = event.pageX;
+	downY = event.pageY;
+	document.getElementById('gestureOutputID').value = "mouse down";
+});
+
+$('#gestureAreaID').mouseup(function(event){
+	upX = event.pageX;
+	upY = event.pageY;
+
+	var updown = Math.abs(upY - downY);
+	var leftright = Math.abs(upX - downX);
+	
+	if(upX == downX && upY == downY){ 
+		document.getElementById('gestureOutputID').value = "mouse up";
+	} else if (updown > leftright){ 
+		if (upY > downY){ 
+			document.getElementById('gestureOutputID').value = "swipe down";
+		} else if (upY < downY){ 
+			document.getElementById('gestureOutputID').value = "swipe up";
+		}
+	} else if (updown < leftright) { 
+		if(upX < downX){
+			document.getElementById('gestureOutputID').value = "swipe left";
+		} else if(upX > downX) { 
+			document.getElementById('gestureOutputID').value = "swipe right";
+		}
+	} 
+});
