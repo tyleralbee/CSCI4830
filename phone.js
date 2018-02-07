@@ -20,10 +20,9 @@ function openTab(evt, title) {
     evt.currentTarget.className += " active";
 
 }
-	$('button').click(function(){
-		// set className to the button's class
+
+$('button').click(function(){
 		var elementClass = $(this).attr('class');
-		// set elementId to the button's id
 		var elementId = $(this).attr('id');
     
     if (elementClass == "number") {
