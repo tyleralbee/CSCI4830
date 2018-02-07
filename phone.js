@@ -1,3 +1,4 @@
+
 function openTab(evt, title) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -17,4 +18,20 @@ function openTab(evt, title) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(title).style.display = "block";
     evt.currentTarget.className += " active";
+
 }
+	$('button').click(function(){
+		// set className to the button's class
+		var elementClass = $(this).attr('class');
+		// set elementId to the button's id
+		var elementId = $(this).attr('id');
+    
+    if (elementClass == "number") {
+      document.getElementById('dialInput').value += elementId;
+    }
+    
+    else if (elementClass == "clearButton"){
+      document.getElementById('dialInput').value = "";
+    }
+    
+  });
