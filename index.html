@@ -9,6 +9,7 @@
    <button class="tablinks" onclick="openTab(event, 'dialer')">Dialer</button>
    <button class="tablinks" onclick="openTab(event, 'contacts')">Contact List</button>
    <button class="tablinks" onclick="openTab(event, 'addContact')">Add Contact</button>
+   <button class="tablinks" onclick="openTab(event, 'testGestures')">Test Gestures</button>
   </div>
 <div id="dialer" class="tabcontent">
   <h3>Dialer</h3>
@@ -47,7 +48,16 @@
   <p><button class="dialOrClear" >Add Contact</button>       <button class="dialOrClear" >Clear</button>
 </p>
 </div>
-  
+  	<div id="testGestures"
+		 class="tabcontent">
+		<h1>Gesture Practice</h1>
+
+		<input id="gestureOutputID" class="gestureOutput">
+
+		<div id="gestureAreaID"
+			 class="gestureArea">
+		</div>
+	</div>
 </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
